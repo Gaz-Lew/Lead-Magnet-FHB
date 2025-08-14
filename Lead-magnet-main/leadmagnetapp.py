@@ -622,6 +622,22 @@ if not st.session_state.form_submitted:
                 label_visibility="collapsed"
             )
             
+            st.markdown("#### Have you been pre-approved for a loan?")
+            pre_approved = st.radio(
+                "Pre-approved",
+                ["Yes", "No"],
+                horizontal=True,
+                label_visibility="collapsed"
+            )
+            
+            st.markdown("#### Would you like a free financial health check with one of our finance experts?")
+            health_check = st.radio(
+                "Health Check",
+                ["Yes", "No"],
+                horizontal=True,
+                label_visibility="collapsed"
+            )
+            
             st.markdown("#### Contact Information")
             col1, col2 = st.columns(2)
             with col1:
@@ -629,17 +645,17 @@ if not st.session_state.form_submitted:
             with col2:
                 phone = st.text_input("Phone Number *", placeholder="Enter your phone number")
             
-            email = st.text_input("Email Address (Optional)", placeholder="Enter your email address")
+            email = st.text_input("Email Address *", placeholder="Enter your email address")
             
             submitted = st.form_submit_button("📧 Get Your Free Guide Now", use_container_width=True, type="primary")
             
             if submitted:
-                if first_name and phone and property_status and readiness:
+                if first_name and phone and email and property_status and readiness and pre_approved and health_check:
                     st.session_state.form_submitted = True
-                    st.session_state.user_email = email if email else "your inbox"
+                    st.session_state.user_email = email
                     st.rerun()
                 else:
-                    st.error("Please fill in all required fields (Name, Phone, Property Status, and Readiness)")
+                    st.error("Please fill in all required fields")
 
 else:
     # Success message
@@ -648,7 +664,7 @@ else:
         <div class="success-icon">📧</div>
         <div class="success-title">Check Your Email!</div>
         <div class="success-text">
-            Your Perth Property Playbook is being sent to <strong>{st.session_state.user_email}</strong>
+            Your Perth Property Playbook has been sent to <strong>{st.session_state.user_email}</strong>
         </div>
         <div class="success-note">
             Don't forget to check your spam folder if you don't see it in the next few minutes.
