@@ -1,30 +1,50 @@
-# Perth property guide
+---
+title: Perth Property Playbook
+emoji: 🏠
+colorFrom: yellow
+colorTo: orange
+sdk: streamlit
+sdk_version: 1.28.0
+app_file: app.py
+pinned: false
+license: mit
+---
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+# Perth Property Playbook 🏠
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/gar2lew-2678s-projects/v0-perth-property-guide)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/RSwuHnB4gj3)
+Your comprehensive guide to buying smart in Western Australia! This Streamlit application provides a complete property buying guide for the Perth market, featuring:
 
-## Overview
+## Features
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+🎯 **What You'll Discover:**
+- First Home Buyer Secrets
+- Investment Strategies  
+- Suburb Selection Matrix
+- Financial Planning Tools
 
-## Deployment
+📚 **Complete Guide Includes:**
+- 8 comprehensive chapters
+- Market analysis & trends
+- Negotiation tactics
+- Due diligence checklists
+- Bonus materials and templates
 
-Your project is live at:
+⭐ **Trusted by 2,500+ Perth Property Buyers**
 
-**[https://vercel.com/gar2lew-2678s-projects/v0-perth-property-guide](https://vercel.com/gar2lew-2678s-projects/v0-perth-property-guide)**
+## About
 
-## Build your app
+Created by **Amplify Solutions Group (ASG)**, this free guide helps both first-time buyers and investors make informed property decisions in the Perth market.
 
-Continue building your app on:
+### Key Benefits:
+- Navigate grants, loans, and hidden costs
+- Identify undervalued suburbs before they boom
+- Learn proven investment strategies
+- Access exclusive scoring systems and tools
 
-**[https://v0.app/chat/projects/RSwuHnB4gj3](https://v0.app/chat/projects/RSwuHnB4gj3)**
+## How to Use
 
-## How It Works
+Simply fill out the form to receive your free Perth Property Playbook guide instantly!
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+---
+
+*© 2025 Amplify Solutions Group. All rights reserved.*
