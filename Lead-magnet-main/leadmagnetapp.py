@@ -249,6 +249,7 @@ st.markdown("""
         font-weight: 500;
         list-style: none;
         padding-left: 0;
+        text-align: center;
     }
     
     .bonus-list li {
@@ -606,38 +607,40 @@ if not st.session_state.form_submitted:
     # Create form in a container
     with st.container():
         with st.form("lead_capture_form"):
-            st.markdown("#### Are you currently renting or own a property?")
-            property_status = st.radio(
-                "Property Status",
-                ["Renting", "Own a property"], 
-                horizontal=True,
-                label_visibility="collapsed"
-            )
+            # Questions in 2x2 grid
+            col1, col2 = st.columns(2)
             
-            st.markdown("#### Are you ready to get into a home right now or just researching?")
-            readiness = st.radio(
-                "Readiness",
-                ["Ready to buy now", "Just researching"],
-                horizontal=True,
-                label_visibility="collapsed"
-            )
+            with col1:
+                st.markdown("#### Are you currently renting or own a property?")
+                property_status = st.radio(
+                    "Property Status",
+                    ["Renting", "Own a property"], 
+                    label_visibility="collapsed"
+                )
+                
+                st.markdown("#### Have you been pre-approved for a loan?")
+                pre_approved = st.radio(
+                    "Pre-approved",
+                    ["Yes", "No"],
+                    label_visibility="collapsed"
+                )
             
-            st.markdown("#### Have you been pre-approved for a loan?")
-            pre_approved = st.radio(
-                "Pre-approved",
-                ["Yes", "No"],
-                horizontal=True,
-                label_visibility="collapsed"
-            )
+            with col2:
+                st.markdown("#### Are you ready to get into a home right now or just researching?")
+                readiness = st.radio(
+                    "Readiness",
+                    ["Ready to buy now", "Just researching"],
+                    label_visibility="collapsed"
+                )
+                
+                st.markdown("#### Would you like a free financial health check with one of our finance experts?")
+                health_check = st.radio(
+                    "Health Check",
+                    ["Yes", "No"],
+                    label_visibility="collapsed"
+                )
             
-            st.markdown("#### Would you like a free financial health check with one of our finance experts?")
-            health_check = st.radio(
-                "Health Check",
-                ["Yes", "No"],
-                horizontal=True,
-                label_visibility="collapsed"
-            )
-            
+            st.markdown("---")
             st.markdown("#### Contact Information")
             col1, col2 = st.columns(2)
             with col1:
