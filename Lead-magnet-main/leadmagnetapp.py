@@ -183,6 +183,7 @@ st.markdown("""
     .chapter-container {
         max-width: 800px;
         margin: 0 auto;
+        text-align: center;
     }
     
     .chapter-item {
@@ -190,10 +191,12 @@ st.markdown("""
         padding: 1.25rem;
         border-radius: 12px;
         border: 2px solid #fbbf24;
-        margin-bottom: 0.75rem;
+        margin: 0.75rem auto;
         display: flex;
         align-items: center;
         transition: all 0.3s ease;
+        max-width: 700px;
+        text-align: left;
     }
     
     .chapter-item:hover {
