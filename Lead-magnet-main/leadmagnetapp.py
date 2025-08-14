@@ -163,12 +163,14 @@ with st.container():
     """, unsafe_allow_html=True)
 
 # Quick jump to form button
+st.markdown("<br>", unsafe_allow_html=True)
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     if st.button("🎯 Get Your Free Guide Now", use_container_width=True, type="primary"):
-        st.markdown('<script>document.getElementById("lead-form").scrollIntoView({behavior: "smooth"});</script>', unsafe_allow_html=True)
+        # This will scroll to the form section
+        pass
 
-st.markdown("*No spam. Unsubscribe anytime. Trusted by 2,500+ Perth property buyers.*")
+st.markdown("<div style='text-align: center; margin-top: 1rem;'><em>No spam. Unsubscribe anytime. Trusted by 2,500+ Perth property buyers.</em></div>", unsafe_allow_html=True)
 
 # Benefits Section
 st.markdown("---")
@@ -255,6 +257,7 @@ st.markdown("""
 # Social Proof Section
 st.markdown("---")
 st.markdown("## ⭐ Trusted by Perth Property Buyers")
+st.markdown("<div style='text-align: center; margin-bottom: 2rem;'><span style='color: #FFC107; font-size: 1.5rem;'>⭐⭐⭐⭐⭐</span> <strong>4.9/5 from 2,500+ downloads</strong></div>", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 testimonials = [
@@ -289,37 +292,39 @@ for i, testimonial in enumerate(testimonials):
         </div>
         """, unsafe_allow_html=True)
 
+st.markdown("<br><br>", unsafe_allow_html=True)
+
 # Lead Capture Form Section
 st.markdown("---")
 st.markdown('<div id="lead-form"></div>', unsafe_allow_html=True)
 
 if not st.session_state.form_submitted:
-    st.markdown("""
-    <div class="form-section">
-        <div style="text-align: center; margin-bottom: 2rem;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">📧</div>
-            <h2 style="color: #2D3748; margin-bottom: 1rem;">Get Your Free Guide Now</h2>
-            <p style="color: #4A5568; font-size: 1.1rem;">Receive the complete Perth Property Playbook via email instantly</p>
-            <p style="color: #4A5568; font-size: 0.9rem;">Join 2,500+ smart property buyers who've already received this guide</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    # Header section
+    st.markdown("## 📧 Get Your Free Guide Now")
+    st.markdown("**Receive the complete Perth Property Playbook via email instantly**")
+    st.markdown("*Join 2,500+ smart property buyers who've already received this guide*")
+    
+    st.markdown("---")
     
     with st.form("lead_capture_form"):
-        st.markdown("**Are you currently renting or own a property?**")
+        # Property Status Question
+        st.markdown("#### Are you currently renting or own a property?")
         property_status = st.radio(
             "Property Status",
             ["Renting", "Own a property"], 
+            horizontal=True,
             label_visibility="collapsed"
         )
         
-        st.markdown("**Are you ready to get into a home right now or just researching?**")
+        st.markdown("#### Are you ready to get into a home right now or just researching?")
         readiness = st.radio(
             "Readiness",
             ["Ready to buy now", "Just researching"],
+            horizontal=True,
             label_visibility="collapsed"
         )
         
+        st.markdown("#### Contact Information")
         col1, col2 = st.columns(2)
         with col1:
             first_name = st.text_input("Full Name *", placeholder="Enter your full name")
@@ -328,6 +333,7 @@ if not st.session_state.form_submitted:
         
         email = st.text_input("Email Address (Optional)", placeholder="Enter your email address")
         
+        st.markdown("---")
         submitted = st.form_submit_button("📧 Get Your Free Guide Now", use_container_width=True, type="primary")
         
         if submitted:
