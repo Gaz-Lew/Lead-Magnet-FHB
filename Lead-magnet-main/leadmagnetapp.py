@@ -500,7 +500,7 @@ benefits = [
     },
     {
         "icon": "🧮",
-        "title": "Financial Planning Tools",
+        "title": "Wealth Management Tools",
         "description": "Calculate borrowing capacity, stamp duty, and ongoing costs with our proven formulas."
     }
 ]
