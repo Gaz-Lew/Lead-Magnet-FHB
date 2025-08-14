@@ -261,7 +261,7 @@ st.markdown("""
     .bonus-list li:before {
         content: "✨";
         position: absolute;
-        left: 1;
+        left: 0.75;
     }
     
     /* Testimonials */
