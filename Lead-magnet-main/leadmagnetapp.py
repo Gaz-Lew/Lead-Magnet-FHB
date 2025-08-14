@@ -24,6 +24,32 @@ st.markdown("""
         background-color: white;
     }
     
+    /* Fix font visibility for all Streamlit elements */
+    .stSelectbox label, .stTextInput label, .stTextArea label, 
+    .stRadio label, .stCheckbox label, .stMultiSelect label,
+    .stNumberInput label, .stSlider label, .stDateInput label,
+    .stTimeInput label, .stFileUploader label, .stColorPicker label,
+    .stForm label, .stFormSubmitButton, .stButton > button,
+    .stRadio > div, .stSelectbox > div, .stTextInput > div,
+    div[data-testid="stMarkdownContainer"] p,
+    div[data-testid="stMarkdownContainer"] h1,
+    div[data-testid="stMarkdownContainer"] h2,
+    div[data-testid="stMarkdownContainer"] h3,
+    div[data-testid="stMarkdownContainer"] h4,
+    div[data-testid="stMarkdownContainer"] span {
+        color: #000000 !important;
+    }
+    
+    /* Ensure radio button text is visible */
+    .stRadio > div > div > div > label {
+        color: #000000 !important;
+    }
+    
+    /* Form elements visibility */
+    .stForm {
+        color: #000000 !important;
+    }
+    
     /* Center all content */
     .main-container {
         max-width: 1200px;
@@ -495,7 +521,7 @@ chapters = [
     "Chapter 2: First Home Buyer's Complete Checklist", 
     "Chapter 3: The Suburb Selection Framework",
     "Chapter 4: Investment Property Strategies",
-    "Chapter 5: Financing & Government Grants Guide",
+    "Chapter 5: Brokerage Advice for First Home Buyers & Government Grants Guide",
     "Chapter 6: Negotiation Tactics That Work",
     "Chapter 7: Due Diligence & Inspection Checklist",
     "Chapter 8: Building Your Property Portfolio"
